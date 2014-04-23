@@ -7,7 +7,8 @@
   </head>
   <body>
    
-      
+    <p>Please dont die while looking at this page,
+    its just a test to see if this works</p>
     <canvas id="myCanvas" width="600" height="600" >
     </canvas>
     <canvas id="anaCanvas" width ="600" height = "600">
