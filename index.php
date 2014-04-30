@@ -132,6 +132,8 @@
       }
       animate();
     </script>
-
+    <li>
+        <a href = "index.html">Assignments</a>
+      </li>
   </body>
 </html>
