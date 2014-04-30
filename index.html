@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type = "text/css" href = "mycss.css"/>
+    <script>
+      
+      function hi()
+      {
+         var picture = document.getElementById("2ndImg").src;
+         //alert("src = " + picture);
+         if(picture.indexOf("stick2.jgp") > - 1)
+         {
+            document.getElementById("2ndImg").src = "stick1.jgp";
+         }
+         else
+         {
+            document.getElementById("2ndImg").src = "stick2.jgp";
+         }
+         //alert(document.getElementById("2ndImg").src);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Jeff's Home Page</h1>
+    <div align = "center" >
+      <img src = "skiing.JPG" alt = "skiing" />
+    </div>
+    <div id = "2ndImage" align = "center">
+      <img src = "stick2.jpg" alt = "stickman" onmouseover="hi()"
+      id = 2ndImg>
+      <li>
+        <a href = "linkPage.html">Assignments</a>
+      </li>
+    </div>
+  </body>
+</html>
