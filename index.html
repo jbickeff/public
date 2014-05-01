@@ -4,34 +4,53 @@
     <title>Home Page</title>
     <link rel="stylesheet" type = "text/css" href = "mycss.css"/>
     <script>
-      
+      /*
       function hi()
       {
          var picture = document.getElementById("2ndImg").src;
+         var inString = "<img src = ";
          //alert("src = " + picture);
-         if(picture.indexOf("stick2.jgp") > - 1)
+         if(picture.indexOf("stick2.JGP") > - 1)
          {
-            document.getElementById("2ndImg").src = "stick1.jgp";
+            document.getElementById("2ndImg").innerHTML = "img src = ";
+            //inString = inString + "stick1.JGP
          }
          else
          {
-            document.getElementById("2ndImg").src = "stick2.jgp";
+            document.getElementById("2ndImg").src = "stick2.JPG";
          }
+         //inString = inString + ""
+         document.getElementById("2ndImage").innerHTML=inString;
          //alert(document.getElementById("2ndImg").src);
       }
+      */
     </script>
   </head>
   <body>
-    <h1>Jeff's Cool Home Page</h1>
-    <div align = "center" >
-      <img src = "skiing2.JPG" alt = "skiing" />
-    </div>
-    <div id = "2ndImage" align = "center">
-      <img src = "stick2.jpg" alt = "stickman" onmouseover="hi()"
-      id = 2ndImg>
+    <h1>Jeff's Home Page</h1>
+    <div class = "left">
       <li>
         <a href = "linkPage.html">Assignments</a>
       </li>
     </div>
+    <div class = "center" >
+      <img src="skiing.JPG" alt = "skiing" />
+    </div>
+    
+    
+    <div class="showhim">
+  <div class = "first" id = "2ndImage" align = "center">
+      <img src = "stick2.JPG" alt = "stickman" onmouseover="hi()"
+      id = 2ndImg>
+    </div>
+   <div class="showme">
+      <div class = "second" id = "2ndImage" align = "center">
+        <img src = "stick1.JPG" alt = "stickman" onmouseover="hi()"
+          id = 2ndImg>
+      </div>
+      <div class="ok">
+      </div>
+</div>
+    
   </body>
 </html>

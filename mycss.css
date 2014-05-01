@@ -2,6 +2,7 @@ body
 {
   background-color:#CCCCFF;
 }
+
 h1
 {
   font-family:"Verdana";
@@ -9,7 +10,46 @@ h1
   font-size:50;
   color:#4A6EB8;
 }
-div.imgDiv
+
+.left
 {
-  
+  position:relative;
+  top:150px;
+  float:left;
+}
+
+.center
+{
+  float:center;
+}
+
+.first
+{
+  position:absolute;
+  top:450px;
+  left:150px
+}
+.second
+{
+  position:absolute;
+  top:450px;
+  left:150px
+}
+/****
+* credit for this code idea goes to 
+* http://stackoverflow.com/questions/17393231/css-on-hover-show-and-hide-different-divs-at-the-same-time
+****/
+.showme
+{ 
+display: none;
+}
+
+.showhim:hover .showme
+{
+display : block;
+}
+
+.showhim:hover .ok
+{
+display : none;
 }
