@@ -4,6 +4,7 @@
   <title>Rate My Appartment Complex</title>
   </head>
   <body>
+    
       <h1>List of Apartments</h1>
       </ br>
       <table style = "width:500px" border = "1">
@@ -14,7 +15,13 @@
         {
           $user = "php";
           $password = "php-pass";
-          $db = new PDO("mysql:host=127.0.0.1;dbname=myapp", $user, $password);
+          echo "used $user"; 
+          $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
+          
+          $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
+          echo "host = $host, port = $port";
+          $pdo = new PDO("mysql:host=$host:$port;dbname=myapp", $user, $password);
+         //somthign
         }
         catch(PDOException $ex)
         {
@@ -62,16 +69,20 @@
       ?>
       </table>
       <?php
+      
         foreach ($db->query("SELECT name, id FROM apartment") as $coms)
         {
         //begin the apartment heding
-            echo "</ br><strong>".$coms["name"]."</strong></ br><table>";
-            foreach($db->query("SELECT context, apID FROM review WHERE apID = \"".$coms["id"] ."\""))
+            echo "</ br><strong>".$coms["name"]."</strong></ br><table style = \"width:500px\" >";
+            foreach($db->query("SELECT context, rate FROM review WHERE apID = ".$coms["id"])as $somthing)
             {
+           
             //i should set a stlye for p or make a style for this part
-              echo "<tr><td><p>"
+              echo "<tr><td><p>".$somthing["context"]."</p></td><td>".$somthing["rate"]."</td></tr>";
             }
+            echo "</table>";
         }
+        
       ?>
   </body>
 </html>
